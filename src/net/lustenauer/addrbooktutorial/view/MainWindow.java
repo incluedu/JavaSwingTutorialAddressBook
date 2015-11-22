@@ -2,6 +2,7 @@ package net.lustenauer.addrbooktutorial.view;
 
 import net.lustenauer.addrbooktutorial.controller.Controller;
 import net.lustenauer.addrbooktutorial.view.menus.MainMenuBar;
+import net.lustenauer.addrbooktutorial.view.toolbar.MainToolBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,7 @@ import java.awt.*;
 public class MainWindow extends JFrame{
 
     private final Controller controller;
+    private MainToolBar toolBar;
 
     public MainWindow(Controller controller) {
         this.controller = controller;
@@ -19,6 +21,13 @@ public class MainWindow extends JFrame{
         init();
         setJMenuBar(new MainMenuBar(controller));
 
+        add(buildToolbar(),BorderLayout.NORTH);
+
+    }
+
+    private Component buildToolbar() {
+        toolBar= new MainToolBar(controller);
+        return toolBar;
     }
 
     private void init() {
