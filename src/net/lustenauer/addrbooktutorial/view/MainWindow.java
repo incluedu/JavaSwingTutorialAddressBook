@@ -1,6 +1,7 @@
 package net.lustenauer.addrbooktutorial.view;
 
 import net.lustenauer.addrbooktutorial.controller.Controller;
+import net.lustenauer.addrbooktutorial.view.menus.MainMenuBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +17,7 @@ public class MainWindow extends JFrame{
         this.controller = controller;
 
         init();
+        setJMenuBar(new MainMenuBar(controller));
 
     }
 
