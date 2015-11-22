@@ -1,0 +1,3 @@
+/**
+ * @author Patric Hollenstein
+ */
