@@ -1,6 +1,8 @@
 package net.lustenauer.addrbooktutorial.view;
 
 import net.lustenauer.addrbooktutorial.controller.Controller;
+import net.lustenauer.addrbooktutorial.model.AddressListModel;
+import net.lustenauer.addrbooktutorial.view.addresslist.AddressListPanel;
 import net.lustenauer.addrbooktutorial.view.menus.MainMenuBar;
 import net.lustenauer.addrbooktutorial.view.toolbar.MainToolBar;
 
@@ -14,6 +16,7 @@ public class MainWindow extends JFrame{
 
     private final Controller controller;
     private MainToolBar toolBar;
+    private AddressListPanel addressListPanel;
 
     public MainWindow(Controller controller) {
         this.controller = controller;
@@ -22,7 +25,13 @@ public class MainWindow extends JFrame{
         setJMenuBar(new MainMenuBar(controller));
 
         add(buildToolbar(),BorderLayout.NORTH);
+        add(buildAddressListPanel(),BorderLayout.WEST);
 
+    }
+
+    private Component buildAddressListPanel() {
+        addressListPanel = new AddressListPanel(controller.getAddressListModel());
+        return addressListPanel;
     }
 
     private Component buildToolbar() {
