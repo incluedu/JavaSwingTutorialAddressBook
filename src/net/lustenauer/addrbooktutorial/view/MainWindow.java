@@ -3,6 +3,7 @@ package net.lustenauer.addrbooktutorial.view;
 import net.lustenauer.addrbooktutorial.controller.Controller;
 import net.lustenauer.addrbooktutorial.model.AddressListModel;
 import net.lustenauer.addrbooktutorial.view.addresslist.AddressListPanel;
+import net.lustenauer.addrbooktutorial.view.addresspanel.AddressPanel;
 import net.lustenauer.addrbooktutorial.view.menus.MainMenuBar;
 import net.lustenauer.addrbooktutorial.view.toolbar.MainToolBar;
 
@@ -26,16 +27,46 @@ public class MainWindow extends JFrame{
 
         add(buildToolbar(),BorderLayout.NORTH);
         add(buildAddressListPanel(),BorderLayout.WEST);
+        add(buildAddressPanel(),BorderLayout.CENTER);
 
     }
 
+
+    // *****************
+    // * ADDRESS PANEL *
+    // *****************
+    AddressPanel addressPanel;
+
+    private Component buildAddressPanel() {
+        addressPanel = new AddressPanel();
+        return addressPanel;
+    }
+
+    public AddressPanel getAddressPanel() {
+        return addressPanel;
+    }
+
+    // ****************
+    // * ADDRESS LIST *
+    // ****************
     private Component buildAddressListPanel() {
         addressListPanel = new AddressListPanel(controller.getAddressListModel());
         return addressListPanel;
     }
 
+    public AddressListPanel getAddressListPanel() {
+        return addressListPanel;
+    }
+
+    // ***********
+    // * TOOLBAR *
+    // ***********
     private Component buildToolbar() {
         toolBar= new MainToolBar(controller);
+        return toolBar;
+    }
+
+    public MainToolBar getToolBar() {
         return toolBar;
     }
 

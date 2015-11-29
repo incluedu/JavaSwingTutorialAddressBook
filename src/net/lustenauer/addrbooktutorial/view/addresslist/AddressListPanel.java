@@ -30,4 +30,8 @@ public class AddressListPanel extends JPanel{
     private void doListSelection(ListSelectionEvent e) {
         System.out.println("doListSelection");
     }
+
+    public JList getAddressList() {
+        return addressList;
+    }
 }

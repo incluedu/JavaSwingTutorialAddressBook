@@ -50,11 +50,11 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    public String getContry() {
+    public String getCountry() {
         return contry;
     }
 
-    public void setContry(String contry) {
+    public void setCountry(String contry) {
         this.contry = contry;
     }
 
